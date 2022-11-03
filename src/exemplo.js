@@ -7,4 +7,5 @@ atualizaDados(minhaLista.length);
  */
 function atualizaDados(numero) {
     console.log(numero);
+    $(".output").show()
 }
