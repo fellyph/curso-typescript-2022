@@ -1,6 +1,10 @@
 let minhaLista = ["Home", "Sobre"];
-atualiza(minaLista.lenght);
+atualizaDados(minhaLista.length);
 
+/**
+ * 
+ * @param {number} numero 
+ */
 function atualizaDados(numero) {
     console.log(numero);
 }
