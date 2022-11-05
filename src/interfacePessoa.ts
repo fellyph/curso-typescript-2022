@@ -1,12 +1,16 @@
 interface Pessoa {
-    rg: number;
-    nome: nomePessoa;
+    id: number;
+    nome: string;
     estadoCivil: EstadoCivil;
     endereco: Endereco;
     dataNascimento?: Date;
 }
 
-type nomePessoa = string;
+interface Produto {
+    id: number,
+    nome: string;
+}
+
 
 interface Endereco {
     rua: string;
@@ -23,7 +27,7 @@ enum EstadoCivil {
 }
 
 let fellyph:Pessoa = {
-    rg: 303030,
+    id: 303030,
     nome: "fellyph cintra",
     estadoCivil: EstadoCivil.Casado,
     endereco: {
@@ -34,7 +38,15 @@ let fellyph:Pessoa = {
     }
 };
 
-function saudacao(pessoa:Pessoa, callback:() => Pessoa ):string {
-    let mensagem = `Olá ${pessoa.nome}`;
+let bolsa:Produto = {
+    id: 202,
+    nome: "Bolsa Zara"
+}
+
+function saudacao<T extends Produto>(item:T ):string {
+    let mensagem = `Olá ${item.nome}`;
     return mensagem;
 }
+
+let mensagemPessoa = saudacao(fellyph);
+let mensagemBolsa = saudacao(bolsa);
