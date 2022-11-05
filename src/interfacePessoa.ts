@@ -1,6 +1,7 @@
 interface Pessoa {
     rg: number;
     nome: nomePessoa;
+    estadoCivil: EstadoCivil;
     endereco: Endereco;
     dataNascimento?: Date;
 }
@@ -15,9 +16,16 @@ interface Endereco {
     apartamento?: string;
 }
 
+enum EstadoCivil {
+    Solteiro = "SOLTEIRO",
+    Casado = "CASADO",
+    Divorciado = "DIVORCIADO"
+}
+
 let fellyph:Pessoa = {
     rg: 303030,
     nome: "fellyph cintra",
+    estadoCivil: EstadoCivil.Casado,
     endereco: {
         estado: "faro",
         rua: "rua bonita",
