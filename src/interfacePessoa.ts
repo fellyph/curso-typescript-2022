@@ -33,3 +33,8 @@ let fellyph:Pessoa = {
         numero: "31-b"
     }
 };
+
+function saudacao(pessoa:Pessoa, callback:() => Pessoa ):string {
+    let mensagem = `Olá ${pessoa.nome}`;
+    return mensagem;
+}
