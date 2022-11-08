@@ -1,12 +1,16 @@
 interface Pessoa {
-    rg: number;
-    nome: nomePessoa;
+    id: number;
+    nome: string;
     estadoCivil: EstadoCivil;
     endereco: Endereco;
     dataNascimento?: Date;
 }
 
-type nomePessoa = string;
+interface Produto {
+    id: number,
+    nome: string;
+}
+
 
 interface Endereco {
     rua: string;
@@ -30,7 +34,7 @@ let enderecoFellyph:Endereco = {
 }
 
 let fellyph:Pessoa = {
-    rg: 303030,
+    id: 303030,
     nome: "fellyph cintra",
     estadoCivil: EstadoCivil.Casado,
     endereco: enderecoFellyph
