@@ -74,3 +74,11 @@ function clone<T1, T2>(entrada:T1):T2 {
 const fellyphClone:Pessoa = clone<Pessoa, Pessoa>(fellyph);
 const copiaEndereco:Endereco = clone(enderecoFellyph);
 const mensagem:string = saudacao(fellyphFucionaio);
+
+// Exemplo com keyof
+function getValue<T>(fonte:T, nomePropriedade:keyof T) {
+    return fonte[nomePropriedade];
+}
+
+const endereco = getValue(fellyph, 'endereco');
+const cidadeFellyph = getValue(enderecoFellyph, 'cidade');
