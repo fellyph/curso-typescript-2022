@@ -6,6 +6,15 @@ interface Pessoa {
     dataNascimento?: Date;
 }
 
+interface Funcionario {
+    id: number;
+    nome: string;
+    estadoCivil: EstadoCivil;
+    endereco: Endereco;
+    dataNascimento?: Date;
+    dataContratacao?:Date;
+}
+
 interface Produto {
     id: number,
     nome: string;
@@ -40,16 +49,25 @@ let fellyph:Pessoa = {
     endereco: enderecoFellyph
 };
 
+let fellyphFucionaio:Funcionario = {
+    id: 303030,
+    nome: "fellyph cintra",
+    estadoCivil: EstadoCivil.Casado,
+    endereco: enderecoFellyph,
+    dataContratacao: new Date('01-01-2020')
+};
 
-function saudacao(pessoa:Pessoa, callback:() => Pessoa ):string {
+
+function saudacao<T extends Pessoa>( pessoa:T ):string {
     let mensagem = `Olá ${pessoa.nome}`;
     return mensagem;
 }
 
 
-function clone<T>(entrada:T):T {
+function clone<T1, T2>(entrada:T1):T2 {
     return Object.apply({}, entrada);
 }
 
-const fellyphClone:Pessoa = clone(fellyph);
+const fellyphClone:Pessoa = clone<Pessoa, Pessoa>(fellyph);
 const copiaEndereco:Endereco = clone(enderecoFellyph);
+const mensagem:string = saudacao(fellyphFucionaio);
