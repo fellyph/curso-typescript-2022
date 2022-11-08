@@ -3,7 +3,7 @@ interface Pessoa {
     nome: string;
     estadoCivil: EstadoCivil;
     endereco: Endereco;
-    dataNascimento?: Date;
+    dataNascimento?: DataString;
 }
 
 interface Funcionario {
@@ -11,15 +11,17 @@ interface Funcionario {
     nome: string;
     estadoCivil: EstadoCivil;
     endereco: Endereco;
-    dataNascimento?: Date;
-    dataContratacao?:Date;
+    dataNascimento?: DataString;
+    dataContratacao?: DataString;
 }
+
+type DataString = Date | string;
+type ProdutoComEndereco = Produto & Endereco;
 
 interface Produto {
     id: number,
     nome: string;
 }
-
 
 interface Endereco {
     rua: string;
