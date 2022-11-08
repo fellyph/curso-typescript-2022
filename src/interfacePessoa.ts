@@ -29,6 +29,7 @@ interface Endereco {
     apartamento?: string;
 }
 
+// Trabalhando com enum
 enum EstadoCivil {
     Solteiro = "SOLTEIRO",
     Casado = "CASADO",
@@ -57,13 +58,13 @@ let fellyphFucionaio:Funcionario = {
     dataContratacao: new Date('01-01-2020')
 };
 
-
+// trabalhando com generics, garantindo propriedades
 function saudacao<T extends Pessoa>( pessoa:T ):string {
     let mensagem = `Olá ${pessoa.nome}`;
     return mensagem;
 }
 
-
+// exemplo de generics com dois tipos de propriedades
 function clone<T1, T2>(entrada:T1):T2 {
     return Object.apply({}, entrada);
 }
